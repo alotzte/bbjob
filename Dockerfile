@@ -13,7 +13,7 @@ COPY /app /app/bbjob
 
 WORKDIR /app/bbjob/backend
 
-CMD ['uvicorn main:app --reload --host 0.0.0.0']
+CMD ["uvicorn", "main:app", "--reload", "--host", "0.0.0.0"]
 # docker build -t bbjob:0.0.1 .
 # docker run -p 8000:8000 --rm -it bbjob:0.0.1
 # cd backend
