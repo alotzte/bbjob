@@ -6,6 +6,7 @@ DATABASE_URL = "postgresql://root:BB123123!@188.72.107.89:5432/postgres"
 
 Base = declarative_base()
 
+
 class Users(Base):
     __tablename__ = 'users'
 
@@ -13,6 +14,9 @@ class Users(Base):
     surname = Column(String)
     name = Column(String)
     middlename = Column(String)
+    username = Column(String)
+    password = Column(String)
+
 
 class Features(Base):
     __tablename__ = "features"
@@ -36,12 +40,13 @@ class Features(Base):
     interviewconducted = Column(Boolean)
     lastsalaryincrease = Column(Date)
     lastpromotion = Column(Date)
-    termination_likelihood = Column(Float)
+    terminationlikelihood = Column(Float)
     totalworkingdays = Column(Integer)
     salary = Column(Float)
     education = Column(String)
     yearstopromotion = Column(Integer)
     ratioofpreviouscompaniestoworkingyears = Column(Float)
+
 
 engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
