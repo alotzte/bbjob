@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  script1:
+    build:
+      context: .
+      dockerfile: Dockerfile_bot
+    command: python bot.py
+
+  script2:
+    build:
+      context: .
+      dockerfile: Dockerfile_user_notifier
+    command: python user_notifier.py
