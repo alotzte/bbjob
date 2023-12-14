@@ -20,3 +20,8 @@ CMD ["uvicorn", "main:app", "--reload", "--host", "0.0.0.0"]
 # uvicorn main:app --reload --host 0.0.0.0
 
 # docker run -p 8000:8000 --gpus all --rm -it bbjob:0.0.1
+
+#docker build -t bbjob:0.0.1 .
+#docker build -t bbjob_bot:0.0.1 -f Dockerfile_bot .
+#docker build -t bbjob_un:0.0.1 -f Dockerfile_user_notifier .
+
