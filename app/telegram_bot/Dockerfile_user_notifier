@@ -1,9 +1,9 @@
 FROM python:3.8
 
-WORKDIR /app
+WORKDIR /app/telegram_bot/
 
 RUN pip install psycopg2-binary schedule python-telegram-bot==13.7
 
-COPY . /app
+COPY . /app/telegram_bot/
 
 CMD ["python", "user_notifier.py"]

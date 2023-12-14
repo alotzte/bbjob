@@ -9,9 +9,9 @@ RUN pip install fastapi jinja2 uvicorn python-multipart websockets pandas SQLAlc
 
 RUN apt-get clean && apt-get autoremove
 
-COPY /app /app/bbjob
+WORKDIR /app/backend
 
-WORKDIR /app/bbjob/backend
+COPY . /app/backend
 
 CMD ["uvicorn", "main:app", "--reload", "--host", "0.0.0.0"]
 # docker build -t bbjob:0.0.1 .
