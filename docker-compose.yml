@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  telegram_bot:
+    build:
+      context: /app/telegram_bot
+      dockerfile: Dockerfile_bot
+    command: python bot.py
+    working_dir: /app/telegram_bot
+
+  telegram_bot_notifier:
+    build:
+      context: /app/telegram_bot
+      dockerfile: Dockerfile_user_notifier
+    command: python user_notifier.py
+    working_dir: /app/telegram_bot
+
+  backend:
+    build:
+      context: /app/backend
+      dockerfile: Dockerfile
+    command: uvicorn main:app --reload --host 0.0.0.0
+    working_dir: /app/backend
